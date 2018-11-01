@@ -10,6 +10,7 @@
 			}
 			body{
 				background-color:white;
+				font:12px/1.5 arial,sans-serif,'宋体';
 			}
 			.box{
 				margin: 0 30px;
@@ -23,21 +24,20 @@
 			ul{
 				margin-left: 20px;
 			}
-			.box1 li{
-				list-style: none;
+			
+			.box1 a{
 				display: inline-block;
 				float: right;
 				width:70px;
 				height: 50px;
 				line-height: 48px;
-			}
-			.box1 a{
-				width:70px;
-				height: 50px;
-				color:black;
+				color:tomato;
+				text-decoration: none;
+				text-align: center;
+				border-radius: 4px;
 			}
 			.box1 a:link{
-				text-decoration: none ;
+				text-decoration: none;
 				color:black;
 			}
 			.box1 a:hover{
@@ -45,11 +45,22 @@
 				color:white;
 				background-color: lightsalmon;
 			}
+			@media (min-width: 480px) {
+				ul a{
+					flex-basis: 50%;
+				}
+			}
+			@media (min-width: 768px) {
+				ul{
+					flex-wrap: nowrap;
+				}
+			}
 			.box2{
 				width: 100%;
 				background-color:floralwhite;
 				height: 480px;
                 margin-bottom: 40px;
+                overflow: hidden;
 			}
 			.pic{
 				border-radius:30px ;
@@ -66,9 +77,11 @@
 				float: right;
 				width: 640px;
 				height: 400px;
-				background-color: aliceblue;
 				margin: 30px;
 				margin-right: 60px;
+				padding-left:10px ;
+				font-size: 16px;
+				color: darksalmon;
 			}
 			.box3{
 				width: 100%;
@@ -96,6 +109,8 @@
 				width: 100%;
 				line-height: 60px;
 				border-radius:10px ;
+				text-align: center;
+				font-size: large;
 			}
 			.work2{
 				background-color: mistyrose;
@@ -103,6 +118,8 @@
 				width: 100%;
 				line-height: 60px;
 				border-radius:10px ;
+				text-align: center;
+				font-size: large;
 			}
 			.logo{
 				width: 360px;
@@ -118,10 +135,10 @@
 		<div class="box">
 			<div class="box1">
 				<ul>
-				<a href=""> <li>主页</li></a>
-				<a href=""> <li>主页</li></a>
-				<a href=""> <li>主页</li></a>
-				<a href=""> <li>主页</li></a>
+				 <a href="">更多</a>
+				 <a href="">关于</a>
+				 <a href="">啥都没有</a>
+				 <a href="">主页</a>
 				</ul>
 			</div>
 			<div class="box2">
@@ -129,16 +146,24 @@
 					<img src="tou.jpg" />
 				</div>
 				<div class="inform">
-					<tr></tr>
+					<div> 每 天 做 w e b 好 辛 苦</div>
+					<br /><br /><br />
+					<div>好 想 睡 觉</div>
+					<br /><br /><br />
+					<div>然 而 为 了 优 秀</div>
+					<br /><br /><br />
+					<div>还 是 辛 辛 苦 苦 做 了 这 个 主 页</div>
+					<br /><br /><br />
+					<div>我 要 优 秀. . .</div>
 				</div>
 			</div>
 			<div class="box3">
 				<div class="works">
-					<a href=""> <div class="work1">作业一</div></a>
-					<a href=""> <div class="work2">作业二</div></a>
-					<a href=""> <div class="work1">作业三</div></a>
-					<a href=""> <div class="work2">作业四</div></a>
-					<a href=""> <div class="work1">作业五</div></a>
+					<a href="firstwork/index.html"> <div class="work1">作业一</div></a>
+					<a href="secondwork/index.html"> <div class="work2">作业二</div></a>
+					<a href="thirdwork/index.html"> <div class="work1">作业三</div></a>
+					<a href="fourthwork/index.html"> <div class="work2">作业四</div></a>
+					<a href="fifthwork/index.html"> <div class="work1">作业五</div></a>
 					<a href=""> <div class="work2">作业六</div></a>
 				</div>
 				<div class="logo">
