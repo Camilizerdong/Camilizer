@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				margin:10px;
+			}
+			.header
+			{
+				overflow: hidden;
+			}
+			.XTU{
+				float: left;
+			}
+			.search{
+				margin-left: 150px;
+				margin-top:24px ;
+				border:1px solid #dfdfdf;
+				border-radius:30px ;
+				width: 500px;
+				height: 32px;
+				float: left;
+				background-color: #f3f6f8;
+			}
+			.web{
+				padding: 6px 19px;
+				font-size:16px ;
+				height: 100%;
+				width: 50px;
+				float: left;
+			}
+			.shuru
+			{
+				padding: 2px 2px 2px 0px;
+				margin-left:0;
+			}
+			input{
+				float: left;
+				font-size: 14px;
+				line-height: 22px;
+				border: 0;
+				width: 280px;
+				height: 20px;
+				padding: 4px 10px;
+				background-color: #f3f6f8;
+			}
+			.sogosearch button{
+				position: relative;
+				right: 0px;
+				top: -5px;
+				color: #fff;
+				background-color:#1479d7 ;
+				border-radius: 30px;
+				border: none;
+				height: 34px;
+				width: 110px;
+				float: right;
+				font-size: 16px;
+				padding: 0 23px;
+			}
+			.xuebi{
+				float: right;
+				margin-top: 24px;
+			}
+			.Qzone,.Email,.login{
+				float: left;
+				padding: 0 2px;
+			}
+			.Qzone a{
+				display: inline-block;
+				width: 40px;
+				height: 35px;
+				}
+			.Qzone a:link{
+				background-image: url(img/icons.png);
+				background-position:0 -93px ;
+				background-repeat: no-repeat;
+			}
+			.Qzone a:hover{
+				background-image: url(img/icons.png);
+				background-position:0 -143px ;
+				background-repeat: no-repeat;
+			}
+			.Email a{
+				display: inline-block;
+				width: 40px;
+				height: 35px;
+				}
+			.Email a:link{
+				background-image: url(img/icons.png);
+				background-position:0 -188px ;
+				background-repeat: no-repeat;
+			}
+			.Email a:hover{
+				background-image: url(img/icons.png);
+				background-position:0 -238px ;
+				background-repeat: no-repeat;
+			}
+			.login{}
+			.topnav{
+				margin-bottom: 30px;
+				background-color:#1479d7 ;
+				height: 50px;
+				padding-left:20px ;
+				border-radius: 3px;
+			}
+			.topnav a{
+				text-align: center;	
+				text-decoration: none;
+				color:#fff ;
+			}
+			.topnav a:hover{
+				text-align: center;	
+				text-decoration: none;
+				color:mediumblue;
+				background-color: lightblue;
+			}
+			.nav{
+				float: left;
+				list-style: none;
+				width: 70px;
+				height: 100%;
+				padding: 10px 10px;
+			}
+			.nav a{
+				font-size: 18px;
+			}
+			.poster{
+				overflow: hidden;
+				margin-bottom:20px ;
+			}
+			.poster1 img{
+				height: 75px;
+				width: 800px;
+				float: left;
+			}
+			.poster2 img{
+				height: 75px;
+				width: 420px;
+				float: right;
+			}
+			.main{
+				padding-top:9px ;
+				overflow: hidden;
+			}
+			.box1,.box2{
+				float: left;
+				width:390px ;
+				overflow: hidden;
+			}
+			.box2{
+				margin-left: 20px;
+			}
+			.box3{
+				float: right;
+				width: 12px;
+				height: 34px;
+				line-height: 40px;
+				border: 1px solid #cae0f3;
+				border-right: none;
+				margin-top: 9px;
+				overflow: hidden;
+				
+			}
+			.box3 a{
+				width: 12px;
+				height: 34px;
+			}
+			.box3 a:link{
+				background-image: url(img/icons.png);
+				background-position: 0px -838px;
+				background-repeat:no-repeat ;
+			}
+			.box3 a:hover{
+				color:#0f82ff ;
+				background-image: url(img/icons.png);
+				background-position: 2px -888px;
+				background-repeat:no-repeat ;
+			}
+			.box4{
+				width:420px ;
+				padding: 0;
+				float: right;
+				padding-top:9px ;
+			}
+			.box4-1{
+				border: 1px solid #cae0f3;
+				font-size: 12px;
+			}
+			.cow{
+				
+				height: 34px;
+				line-height: 40px;
+				border-bottom: 1px solid #cae0f3;
+			}
+			.toptitle{
+				height: 43px;
+				line-height: 40px;
+				width:100%;
+				border-bottom:1px solid #cae0f3;
+				overflow: hidden;
+			}
+			.title1{
+				float:left;
+				font-size:20px ;
+				margin-left:0px ;
+				margin: 0 20px;
+				
+			}
+			.title2{
+				float:left;
+				font-size:20px ;
+				margin: 0 20px;
+				
+			}
+			.attach{
+				float: right;
+			}
+			.location,.weather,.temper{
+				float: left;
+				height: 100%;
+				width: 30px;
+				font-size: 14px;
+				display: inline-block;
+			}
+			.attach a{
+				text-decoration: none;
+			}
+			.attach a:hover{
+				color: #1479d7;
+			}
+			.weather img{
+				width: 25px;
+				height: 25px;
+			}
+			.row{
+				width: 1px;
+				height: 20px;
+				border-left:1px solid #e1e1e1 ;
+				margin: 10px 0 0 0;
+				display: inline-block;
+				float: left;
+			}
+			.title1 a{
+				border:none ;
+				text-decoration: none;
+				display: inline-block;
+				height: 100%;
+				border-bottom: 4px solid #1479d7;
+				color:#1479d7 ;
+			}
+			.title2 a{
+				border:none ;
+				text-decoration: none;
+				color: black;
+				display: inline-block;
+			}
+			.title2 a:hover{
+				border-bottom: 4px solid #1479d7;
+				color: #1479d7;
+				display: inline-block;
+			}
+			li{
+				list-style: none;
+				line-height: 32px;
+			}
+			li a{
+				text-decoration: none;
+				color: black;
+				font-size: 14px;
+			}
+			.bold{
+				font-size: 16px;
+			    font-weight: bold;
+			}
+			.tt{
+				font-weight: bold;
+				color: #253e6d;
+			}
+			.line{
+				padding: 0 5px;
+				border-left:1px solid #e1e1e1 ;
+
+			}
+			.box1-2,.box2-2{
+				margin-top: 20px;
+			}
+			.tmp1{
+				float: left;
+				width: 190px;
+				height: 190px;
+				border-radius: 3px;
+			}
+			.tmp2{
+				float: left;
+				width: 200px;
+				height: 100px;
+			}
+			.tmp1 img{
+				width: 100%;
+				height: 100%;
+			}
+			.tmp2 a{
+				text-decoration: none;
+				color: #000000;
+				font-size: 14px;
+				
+			}
+			.tmp1 a:hover{
+			    color: #3d82f8;
+			 }
+			 .tmp2 a:hover{
+			    color: #3d82f8;
+			 }
+			.cow li{
+				display: inline-block;
+				float: left;
+				margin-left: 20px;
+			}
+			.cow a{
+				text-align: center;	
+				text-decoration: none;
+				color:#000000;
+			}
+			li a:hover{
+				color:#0c82ff;
+			}
+			#logo1{
+				background-image: url(img/icons.png);
+				background-position: right -290px;
+				background-repeat:no-repeat ;
+			}
+			#logo2{
+				background-image: url(img/icons.png);
+				background-position: right -340px;
+				background-repeat:no-repeat ;
+			}
+			#logo3{
+				background-image: url(img/icons.png);
+				background-position: right -386px;
+				background-repeat:no-repeat ;
+			}
+			#logo4{
+				background-image: url(img/icons.png);
+				background-position: right -440px;
+				background-repeat:no-repeat ;
+			}
+			.date{
+				float: left;
+				margin-right: 5px;
+			}
+			.date a{
+				color: #3d82f8;
+				font-size: 14px;
+				text-decoration: none;
+			}
+			.contest{
+				float: left;
+				color: #64788c;
+				margin-left:5px ;
+			}
+			.contest a{
+			    color: #64788c;
+				font-size: 14px;
+				text-decoration: none;
+			}
+			.contest a:hover{
+			    color: #3d82f8;
+				font-size: 14px;
+				text-decoration: none;
+			}
+			.aa{
+				margin-bottom: 20px;
+				margin-top: 30px;
+				height: 43px;
+				line-height: 40px;
+				border-bottom: 1px solid #cae0f3;
+				background-image: url(img/icons.png);
+				background-position: right -984px;
+				background-repeat:no-repeat ;
+			}
+			.basket img{
+				width: 100%;
+				height: 300px;
+				border-radius: 4px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<!--头部 -->
+			<div class="header">
+				<div class="XTU"><img src="img/湘潭大学.jpg" /></div>
+				<!--搜索-->
+				<div class="search">
+					<div class="web">网页</div>
+					<div class="shuru">
+						<input type="text" />
+					</div>
+					<div class="sogosearch">
+						<button>搜狗搜索</button>
+					</div>
+				</div>
+				<!--雪碧图-->
+				<div class="xuebi">
+					<div class="Qzone">
+						<a href="" target="_blank"></a></div>
+					<div class="Email"><a href="" target="_blank"></a></div>
+					<div class="login">
+						<button><a href="">登录</a></button>
+					</div>
+				</div>
+			</div>
+			<!--导航栏-->
+			<div class="topnav">
+				<ul>
+				    <li class="nav">
+				        <a href="/">新闻</a>
+				    </li>
+				     <li class="nav">
+				        <a href="/">视频</a>
+				    </li>
+				     <li class="nav">
+				        <a href="/">图片</a>
+				    </li>
+				     <li class="nav">
+				        <a href="/">体育</a>
+				    </li>
+				     <li class="nav">
+				        <a href="/">娱乐</a>
+				    </li>
+				     <li class="nav">
+				        <a href="/">科技</a>
+				    </li>
+				    <li class="nav">
+				        <a href="/">班服</a>
+				    </li>
+				    <li class="nav">
+				        <a href="/">寝室</a>
+				    </li>
+				    <li class="nav">
+				        <a href="/">活动</a>
+				    </li>
+				    <li class="nav">
+				        <a href="/">招生</a>
+				    </li>
+				    、<li class="nav">
+				        <a href="/">就业</a>
+				    </li>
+				    <li class="nav">
+				        <a href="/">教育</a>
+				    </li>
+				    <li class="nav">
+				        <a href="/">更多</a>
+				    </li>
+				</ul>
+			</div>
+			<div class="poster">
+				<!--校训-->
+				<div class="poster1">
+					<img src="img/校训.jpg" />
+				</div>
+				<!--湘大图-->
+				<div class="poster2">
+					<img src="img/湘大.jpg" />
+				</div>
+			</div>
+			<!--主体-->
+			<div class="main">
+				<!--湘大新闻-->
+				<div class="box1">
+					<div class="box1-1">
+					<div class="toptitle">
+						<div class="title">
+							<div class="title1">
+								 <a href="/" class="news">要闻</a>
+							</div>
+						</div>
+						<span class="row"></span>
+						<div class="title2" class="news">湘大新闻</div>
+						<div class="attach">
+							<a href="">
+								<div class="location">湘潭</div>
+								<div class="weather">
+									<img src="img/Q.png" />
+								</div>
+								<div class="temper">25°C</div>
+							</a>
+						</div>
+					</div>
+					<div>
+						<li><a class="bold" href="">我校体育发展基金成立 四位校友捐赠第一笔赠款</a></li>
+						<li><a href="">我校加入湖南有色金属产业创新联盟</a></li>
+						<li><a href="">我校举办基层党建工作实务专题培训</a></li>
+						<li><a href="">我校承办第十四届全国流变学学术会议</a></li>
+						<li><a href="">省内高校102名辅导员在我校接受法律法规培训</a></li>
+						<li><a href="">我校教师参加中国首届红色音乐文化节</a></li>
+						<li><a href="">军训总结表彰大会：浩然书生气，沙场秋点兵</a></li>
+						<li><a href="">谭建荣院士特聘为我校“特聘教授”、“专聘院士”</a></li>
+					</div>
+					</div>
+					<div class="box1-2">
+						<div class="tmp1">
+							<img src="img/班服.jpg">
+						</div>
+						<div class="tmp2">
+							<p><a href="">班服大赛热火朝天，网二粉色班服不要太好看</a></p>
+						</div>
+					</div>
+				</div>
+				<!--今日话题-->
+				<div class="box2">
+					<div class="box2-1">
+					<div class="toptitle">
+						<div class="title1"><a href="/">今日话题</a></div>
+					</div>
+					<div>
+						<li>
+							<a class="bold" href="">信工院冲鸭</a>
+						</li>
+						<li>
+							<a href="" class="tt">作业</a>
+						<span class="line"></span>
+							<a href="">web为什么作业这么多</a></li>
+						<li><a href="" class="tt">C语言</a>
+						<span class="line"></span>
+							<a href="">ACM打得好心累 C语言为什么这么难学</a></li>
+						<li><a href="" class="tt">雪碧图</a>
+						<span class="line"></span>
+							<a href="">雪碧图到底怎么做？？？？</a></li>
+						<li><a href="" class="tt">部门</a>
+						<span class="line"></span>
+							<a href="">开会是件严肃的事！</a></li>
+						<li><a href="" class="tt">鸡汤</a>
+						<span class="line"></span>
+							<a href="">高数谜题之究竟是什么鸡汤才能使我爱上高数</a></li>
+						<li><a href="" class="tt">恋爱</a>
+						<span class="line"></span>
+							<a href="">联谊不存在 信工男孩能不能找到女朋友</a></li>
+						<li><a href="" class="tt">老师</a>
+						<span class="line"></span>
+							<a href="">李熠老师是不是长得最帅的老师（想不想要优秀？？）</a></li>
+					</div>
+					</div>
+					<div class="box2-2">
+						<div class="tmp1">
+							<img src="img/寝室.jpg">
+						</div>
+						<div class="tmp2">
+							<p><a href="">寝室设计大赛</a></p>
+						</div>
+					</div>
+				</div>	
+				<!--各种杂-->
+				<div class="box4">
+					<div class="box4-1">
+						<div class="cow" id="logo1">
+							<li><a href="">易班APP</a></li>
+							<li><a href="">律动APP</a></li>
+							<li><a href="">学习通</a></li>
+							<li><a href="">运动世界校园</a></li>
+							<li><a href="">拱拱</a></li>
+							<li><a href=""></a></li>
+						</div>
+						<div class="cow" style="background-color: #f5f8fc;" id="logo2">
+							<li><a href="">微信</a></li>
+							<li><a href="">空间</a></li>
+							<li><a href="">QQ</a></li>
+							<li><a href="">邮箱</a></li>
+							<li><a href="">学籍账户</a></li>
+							<li><a href="">会员</a></li>
+							<li><a href="">音乐</a></li>
+						</div>
+						<div class="cow" id="logo3">
+							<li><a href="">别想</a></li>
+							<li><a href="">玩游戏</a></li>
+							<li><a href="">不存在的</a></li>
+							<li><a href="">看来是</a></li>
+							<li><a href="">作业</a></li>
+							<li><a href="">太少了</a></li>
+						</div>
+						<div class="cow" style="background-color: #f5f8fc;" id="logo4">
+							<li><a href="">湘大快报</a></li>
+							<li><a href="">湘大地图</a></li>
+							<li><a href="">菜鸟驿站</a></li>
+							<li><a href="">淘宝</a></li>
+							<li><a href="">湘大美食</a></li>
+						</div>
+					</div>
+					<div class="box4-2">
+						<div class="aa">
+							<div class="title1"><a href="">热门赛事</a></div>
+							<div class="date"><a href="">10月30日</a></div>
+							<span class="row"></span>
+							<div class="contest"><a href="">下午好，今天网二有场热门比赛</a></div>
+						</div>
+						<div class="basket"><img src="img/网二.jpg"></div>
+						<div></div>
+					</div>
+				</div>
+				
+				<div class="box3">
+					<a href=""></a>
+				</div>
+				
+			</div>
+		</div>
+		
+	</body>
+</html>
