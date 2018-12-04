@@ -2,21 +2,56 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>jQuery旋转式动画导航特效</title>
+<title>课程</title>
+<style>.navbar {
+			height: 50px;
+			width: 100%;
+			background-color: hsl(180, 40%, 60%);
+		}
+		
+		.navbar li {
+			list-style: none;
+			line-height: 50px;
+			display: inline-block;
+		}
+		
+		.navbar li a {
+			text-decoration: none;
+			color: grey;
+			display: inline-block;
+			width: 100px;
+			text-align: center;
+			border-radius: 3px;
+		}
+		
+		.navbar li a:hover {
+			background-color: lightblue;
+			color: black;
+		}</style>
 <link href='css/lanren.css' rel='stylesheet' type='text/css'>
 </head>
-<body>
+<body style="background-image: url(img/bgimg.jpg);">
+	<div class="navbar">
+				<ul>
+					<li>
+						<a href="work9.html">导航页</a>
+					</li>
+					<li>
+						<a href="home.html">创业策划书</a>
+					</li>
+				</ul>
+			</div>
 <!--代码部分begin-->
 <div id="test-element"></div>
 <script src="http://www.lanrenzhijia.com/ajaxjs/jquery.min.js"></script>
 <script src="js/feature.presenter.1.5.min.js"></script>
 <script>
 var settings = [ 
-	{image: 'img/lanren1.jpg', heading: '投资估计', description: '尚不明确'}, 
-	{image: 'img/lanren2.jpg', heading: '核心竞争力', description: '课程种类多，综合性强<br>在校更容易了解到女性客户的需求，适应市场能力强<br>效果是潜移默化的，长期客户多<br>一对一进行交流，细节服务有保障'}, 
-	{image: 'img/lanren3.jpg', heading: '营销计划', description: '在网络、杂志等媒体上推出量身定制调查卷，增加客户对产品的了解程度，及时获得客户的需求<br>初期发放一定数量的vip劵，吸引客源<h2>运营计划</h2>开设课程，包括陶艺，乐理，礼仪，谈话技巧，心理，好书品评等，，根据量身定制调查表制定改造计划'}, 
-	{image: 'img/lanren4.jpg', heading: '市场背景：', description: '竞争对手：现今市场上整容行业盛行，而能提升内在气质之处虽然存在，但却都是分散的单方面的，基本上没有把能提升各方面气质的事物综合起来的企业，竞争对手较少<br>市场概况：重视内在气质的女性越来越多，但依旧仍然在少数<br>竞争对手优势：专业性强，针对性高<br>劣势：综合性不高'}, 
-	{image: 'img/lanren5.jpg', heading: '简介', description: '项目名称：<br><br>公司名称：肆意<br><br>项目发起人：谭成思，湘潭大学信息工程学院网络工程二班学生<br><br>项目概况：随着社会、经济的发展，人们对于美貌的重视越来越重视，整容风气盛行，网红脸为大众女性所追捧。而今对于重新定义美的呼声越来越高，对整容的批判越来越多。人们开始意识到美不应肤浅地停留于外貌以及身材的美，世界上最颠倒众生的不是美丽的女人，而是最有吸引力的女人，气质之美能使一个人的言谈举止不同流俗'},
+	{image: 'img/liyi.jpg', heading: '礼仪', description: '会穿衣，懂礼仪，会打扮，塑造的不仅仅是外在美，更会提升内涵，让你内外兼修，信心倍增'}, 
+	{image: 'img/jiaotan.jpg', heading: '交谈', description: '社交过程中，人的谈吐就像一张名片，你的气质优雅早已在开口讲话时被记住，比起八卦邻居家鸡飞蛋打的生活，你能够品原著、论古今，别人也会为你投以尊重与崇拜'}, 
+	{image: 'img/xiesheng.jpg', heading: '写生', description: '舒展自己内在的想象和情感，通过绘画把自己对周围事物的认识表达出来，从而提升审美情趣和修养，锻炼良好的心理素质与毅力'}, 
+	{image: 'img/shuwu.jpg', heading: '书屋', description: '“腹有诗书气自华”，气质里藏着的是曾经读过的书，读书过后，人们的思考使得这个人变得生动起来，慢慢就有了灵气、气质'}, 
+	{image: 'img/taoyi.jpg', heading: '陶艺', description: '了解陶艺文化，亲手学做陶艺，获得对美的享受，培养艺术感知与欣赏能力，在制作过程中沉淀自己纷乱复杂的心绪，'},
 	{image: 'img/lanren6.jpg', heading: '肆意', description: '美只愉悦眼睛，而气质的优雅使人心灵入迷——伏尔泰<br><br>肆意，打造气质更为迷人的你'}
 ];
 var options = {

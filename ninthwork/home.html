@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>主页</title>
+	</head>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+
+	<script type="text/javascript" src="js/prefixfree.min.js"></script>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		
+		.navbar {
+			height: 50px;
+			width: 100%;
+			background-color: hsl(180, 40%, 60%);
+		}
+		
+		.navbar li {
+			list-style: none;
+			line-height: 50px;
+			display: inline-block;
+		}
+		
+		.navbar li a {
+			text-decoration: none;
+			color: grey;
+			display: inline-block;
+			width: 100px;
+			text-align: center;
+			border-radius: 3px;
+		}
+		
+		.navbar li a:hover {
+			background-color: lightblue;
+			color: black;
+		}
+		
+		html,
+		body {
+			padding: 0px;
+			margin: 0px;
+			font-family: 'Raleway', sans-serif;
+			height: 100%;
+			font-family: arial, tahoma, "Microsoft Yahei", "宋体", sans-serif;
+			font: 16px/1.5 arial, '\5b8b\4f53', sans-serif;
+			font-weight: 400px;
+		}
+		
+		body {
+			background-color: #f5f5f5 !important;
+			background-image: url(img/bgimg.jpg);
+		}
+		
+		.content {
+			width: 960px;
+			margin-top: 40px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		
+		
+		
+		.content2 {
+			float: right;
+			width: 680px;
+			background-color: #fff;
+			padding: 29px 29px 0;
+			position: relative;
+		}
+		
+		.intro {
+			overflow: auto;
+		}
+		
+		.intro1 h1 {
+			font-size: 34px;
+			font-weight: 400px;
+			color: #000000;
+		}
+		
+		.intro1 {
+			font-weight: 400px;
+			color: #333;
+			font: 20px/1.5 arial, '\5b8b\4f53', sans-serif;
+			float: left;
+		}
+		
+		dt {
+			border-bottom: 1px solid gainsboro;
+		}
+		
+		.tit {
+			border-left: 12px solid hsl(180, 40%, 60%);
+			padding-left: 8px;
+		}
+		
+		.intro2 {
+			float: right;
+		}
+		
+		.intro img {
+			width: 200px;
+			height: 200px;
+			border-radius: 5px;
+		}
+		
+		.introduce,
+		.set,
+		.plan {
+			margin-top: 40px;
+		}
+		
+		.aspect {
+			border-right: 1px solid gainsboro;
+		}
+	</style>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		.content1{
+			float:left;
+			position:fixed;
+		}
+		.content1 ul {
+			background: white;
+			border-top: 6px solid hsl(180, 40%, 60%);
+			width: 200px;
+			margin: 5em auto;
+		}
+		
+		.content1 ul li {
+			list-style-type: none;
+			position: relative;
+			overflow: hidden;
+		}
+		
+		.content1 ul li a {
+			font: normal 14px/28px Montserrat;
+			color: hsl(180, 40%, 40%);
+			display: block;
+			padding: 10px 15px;
+			text-decoration: none;
+			cursor: pointer;
+			user-select: none;
+			position: relative;
+		}
+		.content1 .ink {
+			display: block;
+			position: absolute;
+			background: hsl(180, 40%, 80%);
+			border-radius: 100%;
+			transform: scale(0);
+		}
+		.content1 .ink.animate {
+			animation: ripple 0.65s linear;
+		}
+		
+		@keyframes ripple {
+			/*scale the element to 250% to safely cover the entire link and fade it out*/
+			100% {
+				opacity: 0;
+				transform: scale(2.5);
+			}
+		}
+	</style>
+
+	<body>
+		<script src="/demos/googlegg.js"></script>
+		<div class="box">
+			<div class="navbar">
+				<ul>
+					<li>
+						<a href="work9.html">导航页</a>
+					</li>
+					<li>
+						<a href="home.html">创业策划书</a>
+					</li>
+					<li>
+						<a href=""></a>
+					</li>
+					<li>
+						<a href=""></a>
+					</li>
+				</ul>
+			</div>
+			<div class="content">
+				<div class="content1">
+					<ul>
+						<li>
+							<a href="home.html">网站首页</a>
+						</li>
+						<li>
+							<a href="index.html">产品课程</a>
+						</li>
+						<li>
+							<a href="example.html">气质样例</a>
+						</li>
+						<li>
+							<a href="phone.html">手机端</a>
+						</li>
+					</ul>
+				</div>
+				<script type="text/javascript" src="js/jquery.min.js"></script>
+				<script type="text/javascript">
+					var parent, ink, d, x, y;
+					$(".content1 ul li a").click(function(e) {
+						parent = $(this).parent();
+						//create .ink element if it doesn't exist
+						if(parent.find(".ink").length == 0)
+							parent.prepend("<span class='ink'></span>");
+
+						ink = parent.find(".ink");
+						//incase of quick double clicks stop the previous animation
+						ink.removeClass("animate");
+
+						//set size of .ink
+						if(!ink.height() && !ink.width()) {
+							//use parent's width or height whichever is larger for the diameter to make a circle which can cover the entire element.
+							d = Math.max(parent.outerWidth(), parent.outerHeight());
+							ink.css({
+								height: d,
+								width: d
+							});
+						}
+
+						//get click coordinates
+						//logic = click coordinates relative to page - parent's position relative to page - half of self height/width to make it controllable from the center;
+						x = e.pageX - parent.offset().left - ink.width() / 2;
+						y = e.pageY - parent.offset().top - ink.height() / 2;
+
+						//set the position and add class .animate
+						ink.css({
+							top: y + 'px',
+							left: x + 'px'
+						}).addClass("animate");
+					})
+				</script>
+
+				<div class="content2">
+					<div class="intro">
+						<div class="intro1">
+							<h1>肆意</h1>
+							<dl>
+								<dt>项目名称：气质培养之路</dt>
+								<dt>公司名称：湘大网二集团(XTUInternetTwoTCS)</dt>
+								<dt>项目发起人：谭成思</dt>
+								<br><br /><br />
+							</dl>
+						</div>
+						<div class="intro2">
+							<img src="img/lanren6.jpg" />
+						</div>
+					</div>
+					<div class="setting">
+						<dl>
+							<dt class="tit"><h2>创业背景</h2></dt>
+							<dt style="color: grey;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;随着社会、经济的发展，人们对于美貌的重视越来越重视，整容风气
+                    		盛行，网红脸为大众女性所追捧。而今对于重新定义美的呼声越来越高，对整容的批判越来越多。人们开始意识到美不应肤浅地停留于外貌以及身材的美，
+                    		世界上最颠倒众生的不是美丽的女人，而是最有吸引力的女人，气质之美能使一个人的言谈举止不同流俗</dt>
+						</dl>
+					</div>
+					<div class="introduce">
+						<dl>
+							<dt class="tit"><h2>项目概况</h2></dt>
+							<dt style="color: grey;">
+                    			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;肆意，专为女性打造一处修身养性之地，通过测试使女性对自己有一个全新的认知，
+                    			制定特殊的培养计划，通过不同方面的课程综合培养每个女性自内而外散发而出的独特气质。在这里，可以于书海中漫步，享受独处的静谧时光，
+                    			也可以与朋友相约下午茶，呼吸空气中恰到好处的清新之气，更有导师教你如何爱护自我，享受生活，为你提供不一样的人生思考方式。我们，不仅是
+                    		</dt>
+						</dl>
+					</div>
+					<div class="set">
+						<dl>
+							<dt class="tit"><h2>市场背景</h2></dt>
+							<dt style="color: grey;">
+                    		竞争对手:现今市场上整容行业盛行，而能提升内在气质之处虽然存在，但却都是分散的单方面的，基本上没有把能提升各方面气质的事物综合起来的企业，竞争对手较少
+                           </dt>
+							<dt style="color: grey;">
+                    		市场概况:重视内在气质的女性越来越多，但依旧仍然在少数
+                           </dt>
+							<dt style="color: grey;">
+                    		竞争对手优势:专业性强，针对性高
+                           </dt>
+							<dt style="color: grey;">
+                    		竞争对手劣势:综合性不高
+                           </dt>
+						</dl>
+					</div>
+				</div>
+			</div>
+
+			<script>
+				//For Demo only
+				var links = document.getElementsByClassName('link')
+				for(var i = 0; i <= links.length; i++)
+					addClass(i)
+
+				function addClass(id) {
+					setTimeout(function() {
+						if(id > 0) links[id - 1].classList.remove('hover')
+						links[id].classList.add('hover')
+					}, id * 750)
+				}
+			</script>
+
+	</body>
+
+</html>
+
+</div>
+</div>
+</body>
+
+</html>
